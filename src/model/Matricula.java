@@ -21,7 +21,7 @@ public class Matricula extends Table {
 	}
 	
 	public String insert(String estudiante, String curso) throws SQLException {
-		String sql = "INSERT INTO " + this.getClass().getSimpleName().toUpperCase() + " VALUES(" + "'" + estudiante + "', " + "'" + curso + ")";
+		String sql = "INSERT INTO " + this.getClass().getSimpleName().toUpperCase() + " VALUES(" + "'" + estudiante + "', " + "'" + curso + "')";
 		executeStatement(sql);
 		return insertOutput();
 	}

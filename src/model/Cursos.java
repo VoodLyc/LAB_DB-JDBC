@@ -23,7 +23,7 @@ public class Cursos extends Table {
 	}
 	
 	public String insert(String nombre, String horario, String salon, String profesor) throws SQLException {
-		String sql = "INSERT INTO " + this.getClass().getSimpleName().toUpperCase() + " VALUES(" + "'" + nombre + "', " + "'" + horario + "', " + salon + "'" + profesor + ")";
+		String sql = "INSERT INTO " + this.getClass().getSimpleName().toUpperCase() + " VALUES(" + "'" + nombre + "', " + "'" + horario + "', '" + salon + "', '" + profesor + "')";
 		executeStatement(sql);
 		return insertOutput();
 	}

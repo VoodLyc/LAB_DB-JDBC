@@ -74,8 +74,8 @@ public class InterfazPrincipal {
 		System.out.println(estudiantes.insert("A01","Samuel Satizabal","Ingenieria de Sistemas",3.8,21));
 		System.out.println(estudiantes.insert("A02","Esteban Ariza","Diseno de Medios Interactivos",4.5,20));
 		System.out.println(estudiantes.insert("A03","Mateo Valdes","Ingenieria de Sistemas",4.8,23));
-		System.out.println(estudiantes.insert("A04","Johan Sebastian Giraldo","Ingenieria de Sistemas",4.0,20));
-		System.out.println(estudiantes.insert("A05","Juan David Ossa","Ingenieria Telematica",4.2,19));
+		System.out.println(estudiantes.insert("A04","Johan Giraldo","Ingenieria de Sistemas",4.0,20));
+		System.out.println(estudiantes.insert("A05","Juan Ossa","Ingenieria Telematica",4.2,19));
 		//PROFESORES
 		System.out.println(profesores.insert("101","Enrique Pena",1));
 		System.out.println(profesores.insert("102","Karen Lara",2));

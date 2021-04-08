@@ -13,8 +13,9 @@ public class Reporte {
 	}
 
 	public String report() throws SQLException {
+		int spacing = 20;
 		String begin = "\n********** INICIO REPORTE DE CURSOS POR ESTUDIANTE **********\n"
-	+ "CODIGO_EST NOMBRE_EST NOMBRE_CURSO HORARIO SALON NOMBRE_PROF";
+		+ "\n" + String.format("%-" + spacing + "s%-" + spacing + "s%-" + spacing + "s%-" + spacing + "s%-" + spacing + "s%-" + spacing + "s","CODIGO_EST", "NOMBRE_EST", "NOMBRE_CURSO", "HORARIO", "SALON", "NOMBRE_PROF");
 		String end = "********************* FIN REPORTE **************************";
 		
 		String query = "SELECT E.CODIGO, E.NOMBRE, C.NOMBRE, C.HORARIO, C.SALON, P.NOMBRE"
@@ -28,8 +29,10 @@ public class Reporte {
 		String result = "";
 		
 		while(rs.next()) {
-			result += "\n" + rs.getString(1) + " , " + rs.getString(2) + " , " + rs.getString(3) + " , " + rs.getString(4) + " , " + rs.getString(5);
+			result += "\n" + String.format("%-" + spacing + "s%-" + spacing + "s%-" + spacing + "s%-" + spacing + "s%-" + spacing + "s%-" + spacing + "s",  rs.getString(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5), rs.getString(6));
 		}
+		
+		result+= "\n";
 		
 		rs.close();
 		stmt.close();
