@@ -20,7 +20,7 @@ public class Profesores extends Table {
 		return createTableOutput();
 	}
 	
-	public String Insert(String cedula, String nombre, int departamento) throws SQLException {
+	public String insert(String cedula, String nombre, int departamento) throws SQLException {
 		String sql = "INSERT INTO " + this.getClass().getSimpleName().toUpperCase() + " VALUES(" + "'" + cedula + "', " + "'" + nombre + "', " + departamento + ")";
 		executeStatement(sql);
 		return insertOutput();

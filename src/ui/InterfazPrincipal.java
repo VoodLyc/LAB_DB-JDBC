@@ -13,9 +13,9 @@ public class InterfazPrincipal {
 	
 	//Attributes
 	private ConexionOracle connection;
-	private Estudiantes estudiante;
-	private Profesores profesor;
-	private Cursos curso;
+	private Estudiantes estudiantes;
+	private Profesores profesores;
+	private Cursos cursos;
 	private Matricula matricula;
 	
 	//Constructor
@@ -45,17 +45,17 @@ public class InterfazPrincipal {
 	}
 	
 	public void initTables() {
-		estudiante = new Estudiantes(connection);
-		profesor = new Profesores(connection);
-		curso = new Cursos(connection);
+		estudiantes = new Estudiantes(connection);
+		profesores = new Profesores(connection);
+		cursos = new Cursos(connection);
 		matricula = new Matricula(connection);
 	}
 	
 	public void dropTables() {
 		try {
-			System.out.println(estudiante.dropTable());
-			System.out.println(profesor.dropTable());
-			System.out.println(curso.dropTable());
+			System.out.println(estudiantes.dropTable());
+			System.out.println(profesores.dropTable());
+			System.out.println(cursos.dropTable());
 			System.out.println(matricula.dropTable());
 		} catch (SQLException e) {
 			System.out.println("\n" + e.getMessage());
@@ -63,18 +63,40 @@ public class InterfazPrincipal {
 	}
 	
 	public void createTables() throws SQLException {
-		System.out.println(estudiante.createTable());
-		System.out.println(profesor.createTable());
-		System.out.println(curso.createTable());
+		System.out.println(estudiantes.createTable());
+		System.out.println(profesores.createTable());
+		System.out.println(cursos.createTable());
 		System.out.println(matricula.createTable());
 	}
 	
 	public void insertData() throws SQLException {
-		//ESTUDIANTE
-		System.out.println(estudiante.insert("A00359178", "Johan Giraldo", "SIS", 4.0, 20));
-		System.out.println(estudiante.insert("A00359179", "Esteban Ariza", "SIS", 4.7, 21));
-		//PROFESOR
-		//CURSO
+		//ESTUDIANTES
+		System.out.println(estudiantes.insert("A01","Samuel Satizabal","Ingenieria de Sistemas",3.8,21));
+		System.out.println(estudiantes.insert("A02","Esteban Ariza","Diseno de Medios Interactivos",4.5,20));
+		System.out.println(estudiantes.insert("A03","Mateo Valdes","Ingenieria de Sistemas",4.8,23));
+		System.out.println(estudiantes.insert("A04","Johan Sebastian Giraldo","Ingenieria de Sistemas",4.0,20));
+		System.out.println(estudiantes.insert("A05","Juan David Ossa","Ingenieria Telematica",4.2,19));
+		//PROFESORES
+		System.out.println(profesores.insert("101","Enrique Pena",1));
+		System.out.println(profesores.insert("102","Karen Lara",2));
+		System.out.println(profesores.insert("103","Victor Vargas",3));
+		System.out.println(profesores.insert("104","Andres Alberto Aristizabal",4));
+		System.out.println(profesores.insert("105","Juan Manuel Reyes",5));
+		//CURSOS
+		System.out.println(cursos.insert("Intro TIC","7:00am-9:00am","E201","101"));
+		System.out.println(cursos.insert("APO I","9:00am-11:00am","E202","102"));
+		System.out.println(cursos.insert("APO II","11:00am-1:00pm","E203","103"));
+		System.out.println(cursos.insert("AED","2:00pm-4:00pm","E204","104"));
+		System.out.println(cursos.insert("PI I","4:00pm-6:00pm","E205","105"));
 		//MATRICULA
+		System.out.println(matricula.insert("A01","Intro TIC"));
+		System.out.println(matricula.insert("A02","Intro TIC"));
+		System.out.println(matricula.insert("A03","Intro TIC"));
+		System.out.println(matricula.insert("A04","Intro TIC"));
+		System.out.println(matricula.insert("A05","Intro TIC"));
+		System.out.println(matricula.insert("A01","APO I"));
+		System.out.println(matricula.insert("A02","APO II"));
+		System.out.println(matricula.insert("A03","AED"));
+		System.out.println(matricula.insert("A04","PI I"));
 	}
 }
