@@ -39,7 +39,6 @@ public class InterfazPrincipal {
 			System.out.println(new Reporte(connection).report());
 			connection.getConnection().close();
 		} catch (SQLException e) {
-			e.printStackTrace();
 			System.out.println("\n" + e.getMessage());
 		}
 	}

@@ -14,9 +14,9 @@ public class Reporte {
 
 	public String report() throws SQLException {
 		int spacing = 20;
-		String begin = "\n********** INICIO REPORTE DE CURSOS POR ESTUDIANTE **********\n"
+		String begin = "\n****************************************** INICIO REPORTE DE CURSOS POR ESTUDIANTE ******************************************\n"
 		+ "\n" + String.format("%-" + spacing + "s%-" + spacing + "s%-" + spacing + "s%-" + spacing + "s%-" + spacing + "s%-" + spacing + "s","CODIGO_EST", "NOMBRE_EST", "NOMBRE_CURSO", "HORARIO", "SALON", "NOMBRE_PROF");
-		String end = "********************* FIN REPORTE **************************";
+		String end = "****************************************************** FIN REPORTE ***********************************************************";
 		
 		String query = "SELECT E.CODIGO, E.NOMBRE, C.NOMBRE, C.HORARIO, C.SALON, P.NOMBRE"
 				+ " FROM ESTUDIANTES E INNER JOIN MATRICULA M ON E.CODIGO=M.ESTUDIANTE"
